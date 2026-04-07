@@ -16,6 +16,18 @@ Krust is built for engineers who need a fast Kubernetes GUI on macOS without hea
 
 If you are searching for a **Lens alternative**, **k9s alternative**, or a **native Kubernetes desktop client for macOS**, this repository is the right place to follow Krust updates.
 
+## Community pain trends (r/kubernetes, r/devops)
+
+From recurring community discussion themes in 2025-2026, teams usually report the same gaps:
+
+- OpenLens/Freelens maintenance confidence issues
+- Lens feeling slow/heavy for large clusters
+- Lens account/closed-source friction for some teams
+- k9s being powerful but harder for non-CLI teammates
+- Ongoing demand for a **lightweight Kubernetes dashboard alternative**
+
+Krust is focused on this exact gap: a **native Kubernetes desktop app** for production operations on macOS that is fast, low-overhead, and team-friendly.
+
 ## Download
 
 - Download latest DMG: https://github.com/vanchonlee/homebrew-tap/releases/latest
