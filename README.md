@@ -18,11 +18,11 @@ If you are searching for a **Lens alternative**, **k9s alternative**, or a **nat
 
 ## Download
 
-- Download latest DMG: https://github.com/SlarOps/homebrew-tap/releases/latest
+- Download latest DMG: https://github.com/vanchonlee/homebrew-tap/releases/latest
 - Install via Homebrew:
 
 ```bash
-brew install slarops/tap/krust
+brew install vanchonlee/tap/krust
 ```
 
 ## Product Links
