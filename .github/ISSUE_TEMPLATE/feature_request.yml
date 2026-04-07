@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a new feature or workflow improvement
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What pain point are you facing today?
+      placeholder: Describe the current workflow problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      placeholder: Describe your ideal behavior in Krust.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: Other tools or workarounds you tried.
+
+  - type: input
+    id: impact
+    attributes:
+      label: Impact
+      placeholder: e.g. Saves 10 minutes during incident debugging

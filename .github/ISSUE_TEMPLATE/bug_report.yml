@@ -1,0 +1,62 @@
+name: Bug report
+description: Report a reproducible Krust product bug
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please provide clear reproduction steps.
+
+  - type: input
+    id: krust_version
+    attributes:
+      label: Krust version
+      placeholder: e.g. 0.9.2
+    validations:
+      required: true
+
+  - type: input
+    id: macos_version
+    attributes:
+      label: macOS version
+      placeholder: e.g. macOS 15.4
+    validations:
+      required: true
+
+  - type: input
+    id: k8s_version
+    attributes:
+      label: Kubernetes version
+      placeholder: e.g. v1.31.3
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open Krust
+        2. Go to ...
+        3. Click ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Paste logs or attach screenshots if possible.

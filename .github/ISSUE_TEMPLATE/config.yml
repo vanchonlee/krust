@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Krust Documentation
+    url: https://krust.io/docs/
+    about: Read setup and feature documentation.
+  - name: Security Contact
+    url: mailto:security@krust.io
+    about: Report sensitive security issues privately.

@@ -1,0 +1,18 @@
+name: Question
+description: Ask a usage or setup question
+title: "[Question]: "
+labels: ["question", "triage"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      placeholder: What do you need help with?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Add cluster setup, version, and what you already tried.
