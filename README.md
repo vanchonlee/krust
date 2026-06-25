@@ -5,7 +5,7 @@ Krust is a **native Kubernetes desktop app for production operations on macOS**.
 This public repository is for product information, roadmap discussion, and issue tracking.
 It does **not** contain the Krust application source code.
 
-![Krust multi-cluster view](assets/krust-multi-cluster.png)
+<img width="1725" height="1067" alt="hero-production-metrics" src="https://github.com/user-attachments/assets/e196cc74-bd92-42d1-b2c5-ca3732d27247" />
 
 ## Why Krust
 
