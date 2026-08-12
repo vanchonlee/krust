@@ -1,0 +1,29 @@
+{
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "endpoint",
+      "description": "PagerDuty account region",
+      "options": [
+        { "label": "United States", "value": "https://mcp.pagerduty.com/mcp" },
+        { "label": "Europe", "value": "https://mcp.eu.pagerduty.com/mcp" }
+      ],
+      "default": "https://mcp.pagerduty.com/mcp"
+    },
+    {
+      "type": "promptString",
+      "id": "api-key",
+      "description": "PagerDuty API key",
+      "password": true
+    }
+  ],
+  "mcpServers": {
+    "pagerduty": {
+      "type": "http",
+      "url": "${input:endpoint}",
+      "headers": {
+        "Authorization": "Token token=${input:api-key}"
+      }
+    }
+  }
+}

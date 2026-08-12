@@ -1,0 +1,20 @@
+{
+  "name": "k8s-safety",
+  "version": "0.1.0",
+  "description": "Production-safe Kubernetes investigation and change review workflows.",
+  "keywords": ["kubernetes", "safety", "production", "review", "incident"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Kubernetes Safety",
+    "shortDescription": "Keep production investigation and changes safe",
+    "longDescription": "Safety-first workflows for reviewing Kubernetes changes and incident actions.",
+    "developerName": "Krust",
+    "category": "Kubernetes",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Review this Kubernetes change before applying",
+      "Prepare a safe incident action plan"
+    ],
+    "brandColor": "#16A34A"
+  }
+}

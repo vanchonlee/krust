@@ -1,0 +1,24 @@
+{
+  "name": "opensearch",
+  "version": "1.2.0",
+  "description": "Explore and query indexed data in self-hosted OpenSearch through its native MCP server.",
+  "author": {
+    "name": "Krust"
+  },
+  "keywords": ["opensearch", "search", "indices", "indexed-data", "requires-activation"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "OpenSearch",
+    "shortDescription": "Explore indexed OpenSearch data.",
+    "longDescription": "Manage independent self-hosted OpenSearch connections by cluster base URL with Basic authentication, then list indices, inspect mappings, and search indexed data through each native MCP endpoint.",
+    "developerName": "Krust",
+    "category": "Observability",
+    "capabilities": ["skills", "mcp"],
+    "defaultPrompt": [
+      "List the indices available in this OpenSearch cluster.",
+      "Inspect the mapping for an OpenSearch index.",
+      "Search an OpenSearch index for matching documents."
+    ]
+  }
+}

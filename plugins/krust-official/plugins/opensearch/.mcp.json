@@ -1,0 +1,60 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "base-url",
+      "description": "Base URL of the OpenSearch cluster",
+      "label": "OpenSearch URL",
+      "placeholder": "https://opensearch.example.com:9200",
+      "helpText": "Enter the cluster base URL. Krust adds /_plugins/_ml/mcp for the native MCP connection; OpenSearch Operations uses the same base URL."
+    },
+    {
+      "type": "promptString",
+      "id": "username",
+      "description": "Username used for OpenSearch Basic authentication",
+      "label": "Username",
+      "placeholder": "Enter username"
+    },
+    {
+      "type": "promptString",
+      "id": "password",
+      "description": "Password used for OpenSearch Basic authentication",
+      "label": "Password",
+      "placeholder": "Enter password",
+      "password": true
+    },
+    {
+      "type": "pickString",
+      "id": "tls-insecure-skip-verify",
+      "description": "TLS certificate verification policy",
+      "label": "TLS verification",
+      "helpText": "Skip verification only for a trusted internal OpenSearch endpoint using a self-signed certificate.",
+      "default": "false",
+      "options": [
+        {
+          "label": "Verify certificate (recommended)",
+          "value": "false"
+        },
+        {
+          "label": "Skip verification (self-signed)",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "mcpServers": {
+    "opensearch": {
+      "type": "http",
+      "multiInstance": true,
+      "url": "${input:base-url}/_plugins/_ml/mcp",
+      "tlsInsecureSkipVerify": "${input:tls-insecure-skip-verify}",
+      "authMode": "basic",
+      "basicAuth": {
+        "username": "${input:username}",
+        "password": "${input:password}"
+      },
+      "startupTimeoutSec": 30,
+      "toolTimeoutSec": 120
+    }
+  }
+}

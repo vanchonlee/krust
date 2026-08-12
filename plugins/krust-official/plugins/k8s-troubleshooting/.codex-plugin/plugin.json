@@ -1,0 +1,20 @@
+{
+  "name": "k8s-troubleshooting",
+  "version": "0.1.0",
+  "description": "Kubernetes troubleshooting workflows for pods, rollouts, services, DNS, and events.",
+  "keywords": ["kubernetes", "troubleshooting", "pods", "rollouts", "events"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Kubernetes Troubleshooting",
+    "shortDescription": "Debug common Kubernetes failures with Krust tools",
+    "longDescription": "Guided troubleshooting workflows for daily SRE and platform operations in Kubernetes clusters.",
+    "developerName": "Krust",
+    "category": "Kubernetes",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Investigate a failing Kubernetes workload",
+      "Debug pod crash loops and rollout issues"
+    ],
+    "brandColor": "#326CE5"
+  }
+}
