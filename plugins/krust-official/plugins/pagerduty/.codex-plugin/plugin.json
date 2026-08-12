@@ -1,6 +1,6 @@
 {
   "name": "pagerduty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PagerDuty incidents, services, schedules, and on-call operations through the official MCP server.",
   "keywords": ["pagerduty", "incidents", "on-call", "requires-activation"],
   "mcpServers": "./.mcp.json",

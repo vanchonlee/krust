@@ -1,6 +1,6 @@
 {
   "name": "k8s-observability",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prometheus and observability workflows for Kubernetes operations.",
   "keywords": ["kubernetes", "prometheus", "metrics", "observability", "sre"],
   "skills": "./skills/",

@@ -1,6 +1,6 @@
 {
   "name": "k8s-troubleshooting",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Kubernetes troubleshooting workflows for pods, rollouts, services, DNS, and events.",
   "keywords": ["kubernetes", "troubleshooting", "pods", "rollouts", "events"],
   "skills": "./skills/",

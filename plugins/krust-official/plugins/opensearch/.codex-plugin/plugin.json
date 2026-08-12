@@ -1,6 +1,6 @@
 {
   "name": "opensearch",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Explore and query indexed data in self-hosted OpenSearch through its native MCP server.",
   "author": {
     "name": "Krust"

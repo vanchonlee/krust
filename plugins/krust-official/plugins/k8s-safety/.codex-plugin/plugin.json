@@ -1,6 +1,6 @@
 {
   "name": "k8s-safety",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Production-safe Kubernetes investigation and change review workflows.",
   "keywords": ["kubernetes", "safety", "production", "review", "incident"],
   "skills": "./skills/",

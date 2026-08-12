@@ -1,6 +1,6 @@
 {
   "name": "atlassian",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jira, Confluence, Compass, Jira Service Management, and Bitbucket workflows through the official Atlassian Rovo MCP server.",
   "keywords": ["atlassian", "jira", "confluence", "bitbucket", "requires-activation"],
   "mcpServers": "./.mcp.json",
