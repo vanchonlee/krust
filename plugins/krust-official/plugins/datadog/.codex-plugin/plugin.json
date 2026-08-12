@@ -1,0 +1,12 @@
+{
+  "name": "datadog",
+  "version": "1.0.1",
+  "description": "Datadog telemetry and operational workflows through the official managed MCP server.",
+  "keywords": ["datadog", "observability", "metrics", "logs", "requires-activation"],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Datadog",
+    "category": "Observability",
+    "capabilities": ["skills", "mcp"]
+  }
+}

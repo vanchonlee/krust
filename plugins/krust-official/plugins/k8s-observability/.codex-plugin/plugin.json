@@ -1,0 +1,20 @@
+{
+  "name": "k8s-observability",
+  "version": "0.1.1",
+  "description": "Prometheus and observability workflows for Kubernetes operations.",
+  "keywords": ["kubernetes", "prometheus", "metrics", "observability", "sre"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Kubernetes Observability",
+    "shortDescription": "Use metrics and charts to investigate cluster behavior",
+    "longDescription": "Prometheus-driven investigation patterns for Kubernetes workloads, nodes, and services.",
+    "developerName": "Krust",
+    "category": "Kubernetes",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Analyze workload CPU and memory usage",
+      "Investigate error rate and latency from Prometheus"
+    ],
+    "brandColor": "#E6522C"
+  }
+}

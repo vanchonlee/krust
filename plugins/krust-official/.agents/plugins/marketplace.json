@@ -1,0 +1,40 @@
+{
+  "name": "krust-official",
+  "interface": {
+    "displayName": "Krust official"
+  },
+  "plugins": [
+    {
+      "name": "atlassian",
+      "source": { "source": "local", "path": "./plugins/atlassian" }
+    },
+    {
+      "name": "datadog",
+      "source": { "source": "local", "path": "./plugins/datadog" }
+    },
+    {
+      "name": "k8s-observability",
+      "source": { "source": "local", "path": "./plugins/k8s-observability" }
+    },
+    {
+      "name": "k8s-safety",
+      "source": { "source": "local", "path": "./plugins/k8s-safety" }
+    },
+    {
+      "name": "k8s-troubleshooting",
+      "source": { "source": "local", "path": "./plugins/k8s-troubleshooting" }
+    },
+    {
+      "name": "opensearch",
+      "source": { "source": "local", "path": "./plugins/opensearch" }
+    },
+    {
+      "name": "opensearch-operations",
+      "source": { "source": "local", "path": "./plugins/opensearch-operations" }
+    },
+    {
+      "name": "pagerduty",
+      "source": { "source": "local", "path": "./plugins/pagerduty" }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenSearch Indexed Data"
+  short_description: "Explore mappings and indexed documents"
+  default_prompt: "Use $index-data to inspect or search indexed data in OpenSearch."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenSearch Operations"
+  short_description: "Diagnose OpenSearch operational health"
+  default_prompt: "Use $operations to diagnose this OpenSearch cluster with read-only HTTP requests."

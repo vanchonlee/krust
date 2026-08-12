@@ -1,0 +1,25 @@
+{
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "endpoint",
+      "description": "Datadog site",
+      "options": [
+        { "label": "US1", "value": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp" },
+        { "label": "US3", "value": "https://mcp.us3.datadoghq.com/api/unstable/mcp-server/mcp" },
+        { "label": "US5", "value": "https://mcp.us5.datadoghq.com/api/unstable/mcp-server/mcp" },
+        { "label": "EU1", "value": "https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp" },
+        { "label": "AP1", "value": "https://mcp.ap1.datadoghq.com/api/unstable/mcp-server/mcp" },
+        { "label": "AP2", "value": "https://mcp.ap2.datadoghq.com/api/unstable/mcp-server/mcp" }
+      ],
+      "default": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp"
+    }
+  ],
+  "mcpServers": {
+    "datadog": {
+      "type": "http",
+      "url": "${input:endpoint}",
+      "authMode": "oauth"
+    }
+  }
+}

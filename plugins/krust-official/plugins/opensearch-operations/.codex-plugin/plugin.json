@@ -1,0 +1,24 @@
+{
+  "name": "opensearch-operations",
+  "version": "1.1.1",
+  "description": "Read-only SRE diagnostics for self-hosted OpenSearch using the configured OpenSearch connection.",
+  "author": {
+    "name": "Krust"
+  },
+  "keywords": ["opensearch", "sre", "operations", "cluster-health", "requires-activation"],
+  "skills": "./skills/",
+  "nativeTools": ["opensearch_operations_request"],
+  "interface": {
+    "displayName": "OpenSearch Operations",
+    "shortDescription": "Diagnose OpenSearch operational health.",
+    "longDescription": "Diagnose cluster health, shard allocation, node pressure, pending tasks, and hot threads through the built-in HTTP Request tool while selecting an independent OpenSearch connection by name.",
+    "developerName": "Krust",
+    "category": "Observability",
+    "capabilities": ["skills", "native-tools"],
+    "defaultPrompt": [
+      "Check this OpenSearch cluster for operational health issues.",
+      "Explain why OpenSearch shards are unassigned.",
+      "Check OpenSearch nodes for resource pressure."
+    ]
+  }
+}
