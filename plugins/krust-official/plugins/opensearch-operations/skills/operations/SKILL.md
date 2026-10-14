@@ -5,7 +5,7 @@ description: This skill should be used when diagnosing self-hosted OpenSearch re
 
 # OpenSearch Operations
 
-Perform read-only SRE triage with `plugin__opensearch_operations__request`, the native tool declared by this plugin. Pass an allowed relative `path` and use `query` for query parameters. Set `target` to the configured OpenSearch connection name. `target` may be omitted only when exactly one connection exists; if the tool reports multiple available targets, select the one requested by the user or ask which cluster they mean. The tool does not accept `url`, `connection`, `headers`, or credentials; the selected OpenSearch connection applies its origin, Basic Auth credentials, and TLS policy internally.
+Perform SRE triage with `plugin__opensearch_operations__request`, the native tool declared by this plugin. Pass a normalized relative `path` and use `query` for query parameters. Set `target` to the configured OpenSearch Operations connection name. `target` may be omitted only when exactly one Operations connection exists; if the tool reports multiple available targets, select the one requested by the user or ask which cluster they mean. The tool does not accept `url`, `connection`, `headers`, or credentials; the selected Operations connection applies its origin, Basic Auth credentials, and TLS policy internally. These connections are configured independently from the OpenSearch indexed-data plugin and do not initialize an MCP transport.
 
 ## Baseline workflow
 
@@ -42,6 +42,8 @@ Shard allocation explanation:
 
 ## Safety
 
-- Keep requests read-only. The only permitted POST is `/_cluster/allocation/explain`.
+- Prefer read-only diagnostics. The bundled policy auto-approves GET and HEAD requests to every valid OpenSearch API path; user policy may add stricter forbidden path patterns.
+- POST `/_cluster/allocation/explain` is policy-allowed because it only explains allocation. Other POST, PUT, PATCH, and OPTIONS requests require user approval.
+- DELETE requests are forbidden by the bundled policy. User policy may add stricter forbidden path patterns, such as `/_template/**`.
 - Do not change cluster or index settings, replicas, routing, allocation, mappings, documents, templates, aliases, security configuration, monitors, or anomaly detectors.
-- Do not use `_search` for operational triage. Use the OpenSearch indexed-data plugin when the user wants to investigate stored application data.
+- As workflow guidance, do not use `_search` for operational triage. This is not an enforced transport boundary: use the OpenSearch indexed-data plugin when the user wants to investigate stored application data.

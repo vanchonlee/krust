@@ -1,0 +1,61 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "url",
+      "description": "Base URL of the OpenSearch REST API",
+      "label": "OpenSearch URL",
+      "placeholder": "https://opensearch.example.com:9200",
+      "helpText": "Enter the OpenSearch cluster origin used for operational REST API requests. Do not append an MCP path."
+    },
+    {
+      "type": "promptString",
+      "id": "username",
+      "description": "Username used for OpenSearch Basic authentication",
+      "label": "Username",
+      "placeholder": "Enter username"
+    },
+    {
+      "type": "promptString",
+      "id": "password",
+      "description": "Password used for OpenSearch Basic authentication",
+      "label": "Password",
+      "placeholder": "Enter password",
+      "password": true
+    },
+    {
+      "type": "pickString",
+      "id": "tls-insecure-skip-verify",
+      "description": "TLS certificate verification policy",
+      "label": "TLS verification",
+      "helpText": "Skip verification only for a trusted internal OpenSearch endpoint using a self-signed certificate.",
+      "default": "false",
+      "options": [
+        {
+          "label": "Verify certificate (recommended)",
+          "value": "false"
+        },
+        {
+          "label": "Skip verification (self-signed)",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "mcpServers": {
+    "opensearch-operations": {
+      "type": "http",
+      "connectionOnly": true,
+      "enabled": false,
+      "multiInstance": true,
+      "url": "${input:url}",
+      "tlsInsecureSkipVerify": "${input:tls-insecure-skip-verify}",
+      "authMode": "basic",
+      "basicAuth": {
+        "username": "${input:username}",
+        "password": "${input:password}"
+      },
+      "toolTimeoutSec": 120
+    }
+  }
+}

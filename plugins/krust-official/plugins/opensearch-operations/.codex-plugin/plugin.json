@@ -1,24 +1,58 @@
 {
   "name": "opensearch-operations",
-  "version": "1.1.1",
-  "description": "Read-only SRE diagnostics for self-hosted OpenSearch using the configured OpenSearch connection.",
+  "version": "1.2.1",
+  "description": "Policy-controlled SRE diagnostics and operations for self-hosted OpenSearch using an independent connection.",
   "author": {
     "name": "Krust"
   },
   "keywords": ["opensearch", "sre", "operations", "cluster-health", "requires-activation"],
   "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
   "nativeTools": ["opensearch_operations_request"],
   "interface": {
     "displayName": "OpenSearch Operations",
     "shortDescription": "Diagnose OpenSearch operational health.",
-    "longDescription": "Diagnose cluster health, shard allocation, node pressure, pending tasks, and hot threads through the built-in HTTP Request tool while selecting an independent OpenSearch connection by name.",
+    "longDescription": "Diagnose cluster health and perform explicitly approved OpenSearch operations through this plugin's own connection. All GET and HEAD API reads are auto-approved by the bundled policy, writes prompt for approval, and DELETE is forbidden by default.",
     "developerName": "Krust",
     "category": "Observability",
-    "capabilities": ["skills", "native-tools"],
+    "capabilities": ["skills", "native-tools", "connections"],
     "defaultPrompt": [
       "Check this OpenSearch cluster for operational health issues.",
       "Explain why OpenSearch shards are unassigned.",
       "Check OpenSearch nodes for resource pressure."
+    ]
+  },
+  "approvalPolicy": {
+    "version": 1,
+    "default": "prompt",
+    "rules": [
+      {
+        "id": "allow-reads",
+        "effect": "allow",
+        "match": {
+          "tools": ["plugin__opensearch_operations__request"],
+          "arguments": {"/method": {"in": ["GET", "HEAD"]}}
+        }
+      },
+      {
+        "id": "allow-allocation-explain",
+        "effect": "allow",
+        "match": {
+          "tools": ["plugin__opensearch_operations__request"],
+          "arguments": {
+            "/method": {"equals": "POST"},
+            "/path": {"equals": "/_cluster/allocation/explain"}
+          }
+        }
+      },
+      {
+        "id": "forbid-delete",
+        "effect": "forbidden",
+        "match": {
+          "tools": ["plugin__opensearch_operations__request"],
+          "arguments": {"/method": {"equals": "DELETE"}}
+        }
+      }
     ]
   }
 }
