@@ -15,7 +15,7 @@
   |
   <a href="https://krust.io/docs/">Docs</a>
   |
-  <a href="https://github.com/vanchonlee/krust/releases/latest">Download</a>
+  <a href="https://github.com/vanchonlee/homebrew-tap/releases/latest">Download</a>
   |
   <a href="https://krust.io/docs/vs-lens/">Krust vs Lens</a>
   |
@@ -25,13 +25,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/vanchonlee/krust/releases/latest">
-    <img alt="Latest release" src="https://img.shields.io/github/v/release/vanchonlee/krust?label=latest%20release" />
+  <a href="https://github.com/vanchonlee/homebrew-tap/releases/latest">
+    <img alt="Latest release" src="https://img.shields.io/github/v/release/vanchonlee/homebrew-tap?label=latest%20release" />
   </a>
-  <a href="https://github.com/vanchonlee/krust/releases/latest">
+  <a href="https://github.com/vanchonlee/homebrew-tap/releases/latest">
     <img alt="macOS" src="https://img.shields.io/badge/macOS-14%2B-black" />
   </a>
-  <a href="https://github.com/vanchonlee/krust/releases/download/v1.5.2/krust-1.5.2.dmg">
+  <a href="https://github.com/vanchonlee/homebrew-tap/releases/download/v1.7.1/krust-1.7.1.dmg">
     <img alt="Download DMG" src="https://img.shields.io/badge/download-DMG-blue" />
   </a>
   <a href="https://krust.io/docs/licensing/">
@@ -45,8 +45,10 @@
 
 **Direct download**
 
-- [Download the latest DMG](https://github.com/vanchonlee/krust/releases/latest)
-- [Download `krust-1.5.2.dmg`](https://github.com/vanchonlee/krust/releases/download/v1.5.2/krust-1.5.2.dmg)
+- [Download the latest DMG](https://github.com/vanchonlee/homebrew-tap/releases/latest)
+- [Download `krust-1.7.1.dmg`](https://github.com/vanchonlee/homebrew-tap/releases/download/v1.7.1/krust-1.7.1.dmg)
+
+Builds are signed and notarized, and Krust updates itself through **Check for Updates** in the app menu.
 
 **Homebrew**
 
@@ -54,7 +56,17 @@
 brew install --cask vanchonlee/tap/krust
 ```
 
-Homebrew also installs the `k9r` terminal command packaged with Krust.
+Homebrew also installs the `k9r` terminal command packaged with Krust. Update with `brew upgrade --cask vanchonlee/tap/krust`.
+
+Krust requires macOS 14 or later.
+
+## What's New
+
+- **1.7.1**: fixes the toolbar pickers and search on macOS 26, keeps each tab's filter visible, and counts native sidecars in the Pod Ready column.
+- **1.7.0**: Google Cloud sign-in leaves preview, the Cluster Overview becomes status grids, the toolbar search gains prefixes (`>` tabs, `@` clusters, `?` help), and views can be dragged into splits.
+- **1.6.x**: native Argo CD workspace, persistent log and manifest panels, typed delete confirmation with protected contexts, a Describe window, and cluster names in multi-cluster views.
+
+See the full [changelog](https://krust.io/docs/changelog/).
 
 ## What Is Krust?
 
@@ -67,13 +79,16 @@ Krust is designed for Mac-first DevOps and SRE workflows where a GUI should feel
 - **Native macOS app**: Rust core with a Swift/AppKit/SwiftUI interface.
 - **No Electron runtime**: built for lower overhead and a more native desktop feel.
 - **Existing kubeconfig**: works with normal Kubernetes auth flows for EKS, AKS, GKE, and on-prem clusters.
+- **Google Cloud sign-in**: add GKE clusters with your Google account, no `gcloud` setup required.
 - **Resource workspace**: inspect pods, deployments, services, config, RBAC, CRDs, Gateway API resources, and more.
 - **Fast logs**: single-pod and incident-oriented log workflows with search, filters, bookmarks, and export.
 - **YAML and diffs**: inspect live YAML, compare resources, review changes, and work through cluster state visually.
 - **Helm workflows**: inspect releases, history, values, manifests, diffs, and rollback context.
+- **Argo CD workspace**: connect to the Argo CD API to inspect application health, sync state, diffs, and history, and to sync or roll back with confirmation.
 - **Topology and metrics**: understand workload relationships and Prometheus-backed resource signals.
 - **Port forwarding**: manage local routes and service access from a desktop workflow.
 - **Security checks**: review common workload, RBAC, image, and configuration issues.
+- **AI agent**: bring your own model provider; cluster changes always need your explicit approval. Extend it with [official plugins](plugins/krust-official).
 - **K9r terminal preview**: terminal-native Kubernetes navigation powered by the same product family.
 
 ## Why Teams Try Krust
@@ -112,7 +127,7 @@ Read more:
 - Features: https://krust.io/docs/features/
 - Changelog: https://krust.io/docs/changelog/
 - Pricing and licensing: https://krust.io/docs/licensing/
-- Latest release: https://github.com/vanchonlee/krust/releases/latest
+- Latest release: https://github.com/vanchonlee/homebrew-tap/releases/latest
 
 ## Repository Scope
 
